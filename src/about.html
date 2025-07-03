@@ -5,6 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Nirdesh Jain</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Add your CSS styles here */
+        .testimonial-card {
+            cursor: pointer;
+            /* Add any other styles for the testimonial cards */
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .timeline {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .timeline li {
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .timeline-date {
+            font-weight: bold;
+        }
+
+        .timeline-event {
+            margin-left: 10px;
+        }
+
+        .timeline li:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background-color: #007bff;
+            border-radius: 50%;
+        }
+
+        .skill-bar {
+            margin: 10px 0;
+        }
+
+        .bar-bg {
+            background-color: #e0e0e0;
+            border-radius: 25px;
+            padding: 3px;
+        }
+
+        .bar-fill {
+            display: block;
+            height: 100%;
+            border-radius: 20px;
+        }
+    </style>
+    <meta name="description" content="Nirdesh Jain's personal portfolio website. Data Science student, projects, resume, and contact.">
+    <meta name="keywords" content="Nirdesh Jain, Data Science, Portfolio, Python, Tableau, Projects, Resume">
+    <meta name="author" content="Nirdesh Jain">
+    <meta property="og:title" content="Nirdesh Jain | Portfolio">
+    <meta property="og:description" content="Showcasing projects, skills, and achievements.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/">
+    <meta property="og:image" content="assets/images/profile.jpg">
 </head>
 <body>
     <header>
@@ -13,6 +110,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html" class="active">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
+                <li><a href="certificates.html">Certificates</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="assets/Nirdesh_Jain-2.pdf" target="_blank" download>Resume</a></li>
             </ul>
@@ -36,18 +134,85 @@
                 <li>Tools: Tableau, Excel, Matplotlib, Seaborn, Scikit-Learn</li>
                 <li>Software: Flutter Flow, Canva</li>
             </ul>
-            <h2>Organizations</h2>
-            <ul>
-                <li>President, ProEdge Hub, CDC, K.R. Mangalam University</li>
-                <li>Google Cloud Innovators, Google Developers Group</li>
-                <li>Member, Google Developer Student Clubs</li>
-            </ul>
+            <h2>Skill Proficiency</h2>
+            <div class="skill-bar">
+                <span>Python</span>
+                <div class="bar-bg"><div class="bar-fill" style="width: 90%"></div></div>
+            </div>
+            <div class="skill-bar">
+                <span>Tableau</span>
+                <div class="bar-bg"><div class="bar-fill" style="width: 80%"></div></div>
+            </div>
+            <div class="skill-bar">
+                <span>R</span>
+                <div class="bar-bg"><div class="bar-fill" style="width: 70%"></div></div>
+            </div>
+            <div class="skill-bar">
+                <span>HTML/CSS</span>
+                <div class="bar-bg"><div class="bar-fill" style="width: 85%"></div></div>
+            </div>
+            
             <h2>Awards & Recognition</h2>
             <ul>
                 <li>Letter of Appreciation, Dean - School of Engineering & Technology, K.R. Mangalam University (Dec 2024)</li>
                 <li>Certificate of Recognition, Research & Development Cell, K.R. Mangalam University (Jun 2024, 2nd Prize)</li>
             </ul>
+            <h2 data-aos="fade-up">Achievements Timeline</h2>
+            <ul class="timeline" data-aos="fade-right">
+                <li>
+                    <span class="timeline-date">Feb 2025</span>
+                    <span class="timeline-event">Published "AI Innovations for Wildlife Preservation"</span>
+                </li>
+                <li>
+                    <span class="timeline-date">Dec 2024</span>
+                    <span class="timeline-event">Won 2nd Prize, R&D Cell, K.R. Mangalam University</span>
+                </li>
+                <li>
+                    <span class="timeline-date">Jan 2025</span>
+                    <span class="timeline-event">Became President, ProEdge Hub, CDC</span>
+                </li>
+                <!-- Add more events as needed -->
+            </ul>
+            <h2>Publications</h2>
+            <ul class="publications-list">
+              <li>
+                <strong>AI Innovations for Wildlife Preservation: An Introductory Guide</strong> (Feb 2025)<br>
+                <a href="https://doi.org/10.4018/979-8-3693-6935-7.ch001" target="_blank">DOI: 10.4018/979-8-3693-6935-7.ch001</a>
+              </li>
+              <li>
+                <strong>Industrial automation and quantum computing</strong> (Dec 2024)<br>
+                <a href="https://doi.org/10.1515/9783111354842-007" target="_blank">DOI: 10.1515/9783111354842-007</a>
+              </li>
+              <li>
+                <strong>Hybrid Composite Materials: Fabrication and Characterization with Friction Stir Welding</strong> (Jun 2024)<br>
+                <a href="https://doi.org/10.4018/979-8-3693-3993-0.ch001" target="_blank">DOI: 10.4018/979-8-3693-3993-0.ch001</a>
+              </li>
+              <li>
+                <strong>Anxiety’s Impact: Mind, Body, Solutions</strong> (Dec 2023)<br>
+                <a href="https://doi.org/10.25215/9189764668.ch007" target="_blank">DOI: 10.25215/9189764668.ch007</a>
+              </li>
+            </ul>
+            <h2>Experience</h2>
+            <ul class="experience-list">
+                <li>
+                    <span class="exp-icon"><i class="fas fa-laptop-code"></i></span>
+                    <div class="exp-title"><strong>Full Stack Developer</strong></div>
+                    <div class="exp-company">Unified Mentor Private Limited · Internship</div>
+                    <div class="exp-duration">May 2025 – Present · 3 mos</div>
+                    <div class="exp-location">Gurugram, Haryana, India · Hybrid</div>
+                </li>
+                <!-- Add more experience items as needed -->
+            </ul>
         </section>
     </main>
+    <button id="theme-toggle" title="Toggle dark/light mode" style="position:fixed;top:24px;right:24px;z-index:1001;">🌙</button>
+    <button id="scrollTopBtn" style="display:none;position:fixed;bottom:32px;right:32px;z-index:999;">↑</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init();
+        });
+    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>

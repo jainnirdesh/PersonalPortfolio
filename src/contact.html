@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Nirdesh Jain</title>
     <link rel="stylesheet" href="css/styles.css">
+    <meta name="description" content="Nirdesh Jain's personal portfolio website. Data Science student, projects, resume, and contact.">
+    <meta name="keywords" content="Nirdesh Jain, Data Science, Portfolio, Python, Tableau, Projects, Resume">
+    <meta name="author" content="Nirdesh Jain">
+    <meta property="og:title" content="Nirdesh Jain | Portfolio">
+    <meta property="og:description" content="Showcasing projects, skills, and achievements.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/">
+    <meta property="og:image" content="assets/images/profile.jpg">
 </head>
 <body>
     <header>
@@ -13,7 +21,8 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="certificates.html">Certificates</a></li>
+                <li><a href="contact.html">Contact</a></li>
                 <li><a href="assets/Nirdesh_Jain-2.pdf" target="_blank" download>Resume</a></li>
             </ul>
         </nav>
@@ -21,20 +30,28 @@
     <main>
         <section class="contact-section">
             <h1>Contact Me</h1>
-            <form id="contactForm" novalidate>
-                <label for="name">Name*</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email*</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="subject">Subject*</label>
-                <input type="text" id="subject" name="subject" required>
-
-                <label for="message">Message*</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-
-                <button type="submit">Send Message</button>
+            <form
+              action="https://formspree.io/f/mblybzny"
+              method="POST"
+              class="contact-form"
+            >
+              <label>
+                Your Name:
+                <input type="text" name="name" required>
+              </label>
+              <label>
+                Your Email:
+                <input type="email" name="email" required>
+              </label>
+              <label>
+                Subject:
+                <input type="text" name="subject" required>
+              </label>
+              <label>
+                Your Message:
+                <textarea name="message" required></textarea>
+              </label>
+              <button type="submit">Send</button>
             </form>
             <div class="contact-links">
                 <p>
@@ -44,6 +61,30 @@
                 </p>
             </div>
         </section>
+        <section class="testimonials-section">
+            <h2>Testimonials</h2>
+            <div class="testimonials">
+                <div class="testimonial-card" onclick="showTestimonial('kanishk')">
+                    <p>"Nirdesh is a natural leader who knows how to bring people together..."</p>
+                    <span>- Kanishk</span>
+                </div>
+                <div class="testimonial-card" onclick="showTestimonial('devraj')">
+                    <p>"I've had the genuine pleasure of working alongside Nirdesh..."</p>
+                    <span>- Devraj Singh</span>
+                </div>
+                <!-- Add more testimonial cards as needed -->
+            </div>
+
+            <!-- Modal for full testimonial -->
+            <div id="testimonial-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <p id="full-testimonial"></p>
+                    <span id="testimonial-author"></span>
+                </div>
+            </div>
+        </section>
+        <button id="theme-toggle" title="Toggle dark/light mode" style="position:fixed;top:24px;right:24px;z-index:1001;">🌙</button>
         <script src="js/main.js"></script>
     </main>
 </body>
