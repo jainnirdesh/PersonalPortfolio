@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Nirdesh Jain</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="assets/Nirdesh_Jain-2.pdf" target="_blank" download>Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="contact-section">
+            <h1>Contact Me</h1>
+            <form id="contactForm" novalidate>
+                <label for="name">Name*</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email*</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="subject">Subject*</label>
+                <input type="text" id="subject" name="subject" required>
+
+                <label for="message">Message*</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="contact-links">
+                <p>
+                    <a href="mailto:jainnirdesh1@gmail.com">jainnirdesh1@gmail.com</a> |
+                    <a href="https://linkedin.com/in/nirdeshhjain" target="_blank">LinkedIn</a> |
+                    <a href="https://github.com/jainnirdesh" target="_blank">GitHub</a>
+                </p>
+            </div>
+        </section>
+        <script src="js/main.js"></script>
+    </main>
+</body>
+</html>
